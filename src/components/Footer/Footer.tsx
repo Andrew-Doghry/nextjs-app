@@ -7,10 +7,10 @@ function Footer() {
     <div className="flex container flex-col lg:flex-row bg-bgs items-center justify-between">
         
         <form action="/api/email" method="post" className="flex flex-col lg:ml-16 mx-auto relative">
-        <p className="py-4 font-light">Be the first to know. </p>
+        <p className="py-4 font-light lg:text-start text-center">Be the first to know. </p>
         <div>
 
-        <input required type="email" placeholder="Email" className="lg:w-[400px] py-2 placeholder:text-black/80 placeholder:font-light focus:border-[0.5px] focus:outline-none bg-bgs px-4 border-black  border-[0.5px] border-solid"/>
+        <input required type="email" placeholder="Email" className="overflow-hidden lg:w-[400px] py-2 placeholder:text-black/80 placeholder:font-light focus:border-[0.5px] focus:outline-none bg-bgs px-4 border-black  border-[0.5px] border-solid  lg:pr-32 pr-16"/>
         <input type="submit" value={'send'} className="-ml-20 bg-gray-400/20 py-1 px-5 rounded-xl uppercase font-light hover:bg-gray-400/70 transition-all" />
         </div>
         </form>

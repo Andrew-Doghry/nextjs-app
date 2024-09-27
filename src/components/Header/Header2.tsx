@@ -1,20 +1,19 @@
 "use client"
-import { ShoppingBag,  User } from "lucide-react"
+import { GitPullRequest, ShoppingBag,  User } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { Bars3Icon, XMarkIcon, } from '@heroicons/react/24/outline'
 
 import {motion as m, useAnimationControls} from "framer-motion"
-// import { Bars3Icon, XMarkIcon, } from '@heroicons/react/24/outline'
+import { useAppDispatch, useAppSelector } from "@/lib/hooks"
+import { selectCart } from "@/store/cartSlice"
 const navigation = [
     { name: 'Shop', to: '/' },
     { name: 'New Arrivals', to: '/newarrivals' },
-    { name: 'Hoodies', to: 'hoodies' },
-    { name: 'T-shirts', to: 'tshirts' },
-    { name: 'All Products', to: "allproducts" },
+    { name: 'Hoodies', to: '/hoodies' },
+    { name: 'T-shirts', to: '/tshirts' },
+    { name: 'All Products', to: "/allproducts" },
   ]
-
 export default function Header2(){
     const [mobileMenuOpen,setMobileMenuOpen] = useState(false)
     const animationVariants ={
@@ -32,20 +31,26 @@ export default function Header2(){
     },
 } 
     const controler = useAnimationControls();
-    
-    
+    const cartState = useAppSelector(selectCart)
     function handleMenuOpen(){
          setMobileMenuOpen(!mobileMenuOpen)
      }
      useEffect(()=>{
         if(mobileMenuOpen)controler.start(animationVariants.open);else controler.start(animationVariants.close)
+
      },[mobileMenuOpen])
+    
     return (
-        <div className="  bg-bgs relative right-0 left-0 z-50 ">
+        <div className="  bg-bgs  right-0 left-0 z-50 fixed  ">
             <header className="container flex py-2 px-5 justify-between items-center ">
                 {/* the cart  */}
-                <Link href={'/cart'} className="cursor-pointer">
-                <ShoppingBag size={25}/>
+                <Link href={'/cart'} className="text-black font-light cursor-pointer">
+                {cartState.length !== 0?<span className={`bg-black/80 h-6 w-6 text-sm font-light  text-white absolute rounded-full top-6 translate-x-4 flex justify-center items-center`}>
+                    {cartState.length}
+                </span>:null}
+                <span className="z-2 relative">
+                <ShoppingBag size={25} strokeWidth={1} />
+                </span>
                 </Link>
                 <Link href={'/'} className="cursor-pointer">
 
@@ -70,8 +75,12 @@ export default function Header2(){
                 
                     </div>
                     <m.div variants={animationVariants}
-                    animate={controler} transition={{type:"tween" ,duration:0.3}} initial={'initial'} className="dropMenu  p-5  bg-bgs  absolute -right-full  w-[80vw] min-h-screen  top-full mt-2 ">
-                        <ul>
+                    animate={controler} transition={{type:"tween" ,duration:0.3}} initial={'initial'} className="dropMenu    bg-bgs  absolute -right-full  w-[80vw] min-h-screen  top-full mt-2 ">
+                        <m.div variants={animationVariants}
+                    animate={controler} transition={{type:"tween" ,duration:0.1}} initial={'initial'} className="absolute bg-black/40 h-screen w-[200vw]  right-0 p-5 top-0 "/>
+
+
+                        <ul className="absolute z-1 bg-bgs w-full h-full p-5">
                         {navigation.map((item) => (
                             <li key={item.name}>
                     <Link
@@ -87,7 +96,7 @@ export default function Header2(){
                   ))}
                             <li >
                     <Link
-                      href={'/account'}
+                      href={'/signup'}
                       className={ ` hover:pl-2 transition-all -mx-3 block rounded-lg px-3 py-2 text-base  leading-7   text-black`}
                       // text-gray-900
                       onClick={() => setMobileMenuOpen(false)}
@@ -114,7 +123,8 @@ export default function Header2(){
                     <Link
                       key={item.name}
                       href={item.to}
-                      className={ ` transition-all -mx-3 flex items-center justify-center rounded-lg px-3 py-2 text-base  leading-[15px]   text-black   overflow-hidden relative before:absolute before:w-full before:h-[2px] before:bg-black   before:bottom-0 before:-left-full hover:before:left-0 before:transition-all `}
+
+                      className={` transition-all -mx-3 flex items-center justify-center rounded-lg px-3 py-2 text-base  leading-[15px]   text-black   overflow-hidden relative before:absolute before:w-full before:h-[2px] before:bg-black   before:bottom-0 before:-left-full hover:before:left-0 before:transition-all `}
                       // text-gray-900
                       onClick={() => setMobileMenuOpen(false)}
                       >

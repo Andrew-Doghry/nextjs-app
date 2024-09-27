@@ -18,7 +18,7 @@ export default function Login(){
           <label htmlFor="email" className="sr-only">Email</label>
   
           <div className="relative">
-            <input required required
+            <input required 
               type="email"
               className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
               placeholder="Enter email"
@@ -94,7 +94,7 @@ export default function Login(){
       </form>
     </div>
   
-    <div className="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
+    <div className="lg:block hidden relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
       <img
         alt="brand photo"
         src="/imgs/bg.jpg"

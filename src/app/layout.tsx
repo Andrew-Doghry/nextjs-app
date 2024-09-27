@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
 import Offers from "@/components/Offers";
-import { Suspense } from "react";
-import { Loading } from "./loading";
 import Header2 from "@/components/Header/Header2";
+import ProviderLayout from "../store/ProviderLayout";
+// import Header from "@/components/Header/Header";
+// import { Suspense } from "react";
+// import { Loading } from "./loading";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
 
 export const metadata: Metadata = {
   title: "SUN&MOON",
@@ -29,6 +30,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+  
   return (
     <html lang="en">
 	<head>
@@ -38,16 +41,11 @@ export default function RootLayout({
      className="relative min-h-screen"
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <div className="fixed left-0 right-0 z-50">
-    <Offers/>
-  <Header2/>
-      </div>
-      <br />
-      <div className="lg:mt-24  mt-14 ">
+        <ProviderLayout>
         {children}
-      </div>
+        </ProviderLayout>
         
-        <Footer/>
+        
         
       </body>
     </html>

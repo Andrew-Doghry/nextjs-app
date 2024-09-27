@@ -1,3 +1,4 @@
+import ProductsGrid from "@/components/Hero/ProductsGrid";
 import Link from "next/link";
 
 export default function AllProducts(){
@@ -36,7 +37,7 @@ export default function AllProducts(){
 
     </div>
 
-    <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {/* <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <li>
         <Link href="/products/1" className="group block overflow-hidden">
           <img
@@ -187,7 +188,8 @@ export default function AllProducts(){
           </div>
         </a>
       </li>
-    </ul>
+    </ul> */}
+    <ProductsGrid limit={null}/>
   </div>
 </section>       
     )

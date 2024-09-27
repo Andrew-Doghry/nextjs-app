@@ -1,3 +1,5 @@
+import ProductsGrid from "@/components/Hero/ProductsGrid";
+
 export default function TShirts(){
     return (
         <section>
@@ -32,7 +34,7 @@ export default function TShirts(){
         
         
             </div>
-        
+{/*         
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <li>
                 <a href="#" className="group block overflow-hidden">
@@ -184,7 +186,8 @@ export default function TShirts(){
                   </div>
                 </a>
               </li>
-            </ul>
+            </ul> */}
+            <ProductsGrid limit={null}/>
           </div>
         </section>)
 }

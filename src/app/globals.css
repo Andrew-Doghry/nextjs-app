@@ -21,7 +21,7 @@ body{
     background-color:white;
     width: 100vw;
     overflow-x: hidden;
-    @apply mx-auto;
+    @apply mx-auto selection:bg-black selection:text-white selection:rounded-xl;
 
 }
 ::-webkit-scrollbar{

@@ -1,6 +1,6 @@
-import Header from "@/components/Header/Header";
+// import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
-import Offers from "@/components/Offers";
+// import Offers from "@/components/Offers";
 export default  function Home() {
   
   return (
