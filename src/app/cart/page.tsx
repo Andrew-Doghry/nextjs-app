@@ -7,6 +7,7 @@ import { ReactNode, useState } from 'react';
 export default function Cart(){
   const cartState = useAppSelector(selectCart)
   const cartPrice = useAppSelector(selectPrices)
+  const ids = []
   const dispatch = useAppDispatch()
     return (
 
@@ -20,18 +21,19 @@ export default function Cart(){
       <div className="mt-8">
         <ul className="space-y-4">
           {cartState.map(product=>{   
-            return(            
-              
+            
+            return(             
             <li className="flex items-center gap-4" key={product.id}>
-              
-            <img
+              <img
               src={product.image}
               alt="product name"
               className="size-16 rounded object-cover"
               />
 
             <div>
+            <Link href={`/products/${product.id}`} className=''>
               <h3 className="text-[0.8rem] text-gray-900">{product.title}</h3>
+              </Link>
 
               <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
                 <div>
@@ -76,6 +78,7 @@ export default function Cart(){
                 </svg>
               </button>
             </div>
+            
           </li>
           )
       })   
@@ -215,7 +218,7 @@ export default function Cart(){
 
               <div className="flex justify-between !text-base font-medium">
                 <dt>Total</dt>
-                <dd>{(cartPrice-20)<0?0:(cartPrice+(cartPrice/10))-20}</dd>
+                <dd>${((cartPrice-20)<0?0:(cartPrice+(cartPrice/10))-20).toFixed(1)}</dd>
               </div>
             </dl>
 

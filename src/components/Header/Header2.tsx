@@ -7,14 +7,20 @@ import { useEffect, useState } from "react"
 import {motion as m, useAnimationControls} from "framer-motion"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
 import { selectCart } from "@/store/cartSlice"
+import { usePathname } from "next/navigation"
 const navigation = [
     { name: 'Shop', to: '/' },
     { name: 'New Arrivals', to: '/newarrivals' },
-    { name: 'Hoodies', to: '/hoodies' },
+    { name: 'Caps', to: '/hoodies' },
     { name: 'T-shirts', to: '/tshirts' },
-    { name: 'All Products', to: "/allproducts" },
+    { name: 'Pants', to: '/tshirts' },
+{ name: 'All Products', to: "/allproducts" },
   ]
 export default function Header2(){
+    const pathname = usePathname()
+    useEffect(()=>{
+        console.log(pathname)
+    },[pathname])
     const [mobileMenuOpen,setMobileMenuOpen] = useState(false)
     const animationVariants ={
         initial:{
@@ -62,8 +68,8 @@ export default function Header2(){
                     </Link>
                 </div>
 {/* mobile menu */}
-                <div onClick={handleMenuOpen} className="myMenu lg:hidden  translate-x-2 ">
-                    <div className={`${mobileMenuOpen?'gap-0 relative':"gap-1"} menuIcon w-8 h-8  flex flex-col justify-center items-center  `}>
+                <div onClick={handleMenuOpen} className="myMenu lg:hidden  translate-x-2  ">
+                    <div className={`${mobileMenuOpen?'gap-0 relative':"gap-1"} menuIcon w-8 h-8  flex flex-col justify-center items-center  cursor-pointer`}>
                     <span className={`transition-all ${mobileMenuOpen?'rotate-45 w-[50%] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]':"w-[80%]"}
                     origin-center bg-slate-950 w-[80%]  h-[2px] rounded-2xl`} ></span>
                     {!mobileMenuOpen&&<span className={`transition-all bg-slate-950 w-[80%] mx-auto h-[2px] rounded-2xl`} ></span>}
@@ -72,7 +78,6 @@ export default function Header2(){
                     {/* <span className={`${mobileMenuOpen?'-rotate-45 w-[50%]':"w-[80%]"} 
                     origin-center
                     bg-slate-950 w-[80%]  h-[2px] rounded-2xl`}></span> */}
-                
                     </div>
                     <m.div variants={animationVariants}
                     animate={controler} transition={{type:"tween" ,duration:0.3}} initial={'initial'} className="dropMenu    bg-bgs  absolute -right-full  w-[80vw] min-h-screen  top-full mt-2 ">
@@ -86,7 +91,8 @@ export default function Header2(){
                     <Link
                       key={item.name}
                       href={item.to}
-                      className={ ` hover:pl-2 transition-all -mx-3 block rounded-lg px-3 py-2 text-base  leading-7   text-black`}
+                      className={`${`${item.to}` === pathname?"border-l-2 border-black pl-5 bg-white/40":"border-0"} hover:pl-2 transition-all -mx-3 block rounded-lg px-3 py-2 text-base  leading-7   text-black hover:border-l-2 border-black`}
+                      
                       // text-gray-900
                       onClick={() => setMobileMenuOpen(false)}
                       >
@@ -124,7 +130,7 @@ export default function Header2(){
                       key={item.name}
                       href={item.to}
 
-                      className={` transition-all -mx-3 flex items-center justify-center rounded-lg px-3 py-2 text-base  leading-[15px]   text-black   overflow-hidden relative before:absolute before:w-full before:h-[2px] before:bg-black   before:bottom-0 before:-left-full hover:before:left-0 before:transition-all `}
+                      className={`${`${item.to}` === pathname?"before:left-0":"before:left-100"} transition-all -mx-3 flex items-center justify-center rounded-lg px-3 py-2 text-base  leading-[15px]   text-black   overflow-hidden relative before:absolute before:w-full before:h-[2px] before:bg-black   before:bottom-0 before:-left-full hover:before:left-0 before:transition-all `}
                       // text-gray-900
                       onClick={() => setMobileMenuOpen(false)}
                       >

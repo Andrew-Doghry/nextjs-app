@@ -5,7 +5,7 @@ import type { RootState } from './store'
 export interface product {
     id:number,
     title:string,
-    image : string,
+    image : string, 
     size: number,
     amount:number,
     color?:string,

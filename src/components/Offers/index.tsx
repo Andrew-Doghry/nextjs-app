@@ -68,7 +68,7 @@ setTimeout(() => {
       </div>
       <div className="font-light capitalize text-sm flex flex-row   w-[70%] flex-nowrap overflow-hidden h-[40px] lg:h-[20px] md:h-[20px] sm:h-[20px]  ">
         <div className="slider flex flex-col relative w-full h-full">
-          <m.h1 initial={animationVariants.firstSlideInit}  animate={indicator?animationVariants.firstSlideAnimate:animationVariants.firstSlideInit} transition={{type:"tween",duration:0.5}}   className=" text-center min-w-full min-h-full absolute  text-sm text-wrap">free shippig across Egypt | COD available cash on delivery</m.h1>
+          <m.h1 initial={animationVariants.firstSlideInit}  animate={indicator?animationVariants.firstSlideAnimate:animationVariants.firstSlideInit} transition={{type:"tween",duration:0.5}}   className=" text-center min-w-full min-h-full absolute  text-sm text-wrap">free shippig across USA | COD available cash on delivery</m.h1>
           {/* transition={{type:"tween",repeat:Infinity,duration:3.5}} */}
           <m.h1 animate={indicator?animationVariants.secondSlideAnimate:animationVariants.secondeSlideInit} initial={animationVariants.secondeSlideInit}  transition={{type:"tween",duration:0.5}}  className="  text-center min-w-full absolute text-wrap">UpTo 40% off on winter BestSellers | valid Till end Sept</m.h1>
           {/* transition={{type:"tween",repeat:Infinity,duration:3.5}}  */}

@@ -42,7 +42,7 @@ export default function signOut(){
               type="text"
               id="FirstName"
               name="first_name"
-              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              className="mt-1 w-full rounded-md border-gray-200 focus:outline-gray-400 p-2  bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
 
@@ -55,7 +55,7 @@ export default function signOut(){
               type="text"
               id="LastName"
               name="last_name"
-              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              className="mt-1 w-full rounded-md border-gray-200 focus:outline-gray-400 p-2 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
 
@@ -66,7 +66,7 @@ export default function signOut(){
               type="email"
               id="Email"
               name="email"
-              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              className="mt-1 w-full rounded-md border-gray-200 focus:outline-gray-400 p-2 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
 
@@ -77,7 +77,7 @@ export default function signOut(){
               type="password"
               id="Password"
               name="password"
-              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              className="mt-1 w-full rounded-md border-gray-200 focus:outline-gray-400 p-2 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
           <div className="col-span-12 sm:col-span-6">
@@ -87,7 +87,7 @@ export default function signOut(){
               type="number"
               id="Password"
               name="password"
-              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              className="mt-1 w-full rounded-md border-gray-200 focus:outline-gray-400 p-2 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
 
@@ -100,7 +100,7 @@ export default function signOut(){
               type="password"
               id="PasswordConfirmation"
               name="password_confirmation"
-              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              className="mt-1 w-full rounded-md border-gray-200 focus:outline-gray-400 p-2 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div> */}
 
@@ -110,7 +110,7 @@ export default function signOut(){
                 type="checkbox"
                 id="MarketingAccept"
                 name="marketing_accept"
-                className="size-5 rounded-md border-gray-200 bg-white shadow-sm"
+                className="size-5 rounded-md border-gray-200 focus:outline-gray-400 p-2 bg-white shadow-sm"
               />
 
               <span className="text-sm text-gray-700">

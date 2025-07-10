@@ -38,7 +38,7 @@ export default function RootLayout({
 	<link rel="icon" href="/imgs/logo.svg"/>
 </head>
       <body
-     className="relative min-h-screen"
+     className="relative min-h-screen "
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
         <ProviderLayout>

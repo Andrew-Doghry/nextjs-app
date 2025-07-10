@@ -6,7 +6,7 @@ async function ProductsGrid({limit,start}:{limit:number|null,start?:number}) {
   const data = await resp.json() 
   let counter = 0;
   return (
-    <div className='grid lg:grid-cols-4 gap-2 lg:gap-4 grid-cols-2 md:w-[80vw]   mx-auto my-10'>
+    <div className='container grid lg:grid-cols-4 gap-2 lg:gap-4 grid-cols-2 md:w-[80vw]    my-10'>
       {
 data && data.length >0 ? data.map((product , index)=>{
   //  product.images[0] = (product.images[0] as string).replace('["','')

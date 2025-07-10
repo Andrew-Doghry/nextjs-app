@@ -14,20 +14,24 @@ function ProviderLayout({children}:{children:React.ReactNode}) {
     <div className='relative'>
     <Provider store={myStore}>
     {/* {!pathname.includes('/pepo/lepo')&&  */}
+    {!pathname.includes('/dashboard')&& <>
     <div className="fixed left-0 right-0 z-50 ">
     <Offers/>
     <Header2/>
       </div>
+      <br />
+      <br />
+      <br className='hidden lg:block'/>
+      <br className='hidden lg:block'/>
+      <br />
+    </>
+    }
     {/* } */}
-      <br />
-      <br />
-      <br className='hidden lg:block'/>
-      <br className='hidden lg:block'/>
-      <br />
+      
       <div className="">
       {children}
     </div>
-    {!pathname.includes('/pepo/lepo')&& <Footer/>
+    {!pathname.includes('/dashboard')&& <Footer/>
     }
     </Provider>
     </div>
